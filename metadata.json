@@ -1,0 +1,8 @@
+{
+  "name": "MémoPorte",
+  "description": "Guide technique interactif pour le sens d'ouverture des portes (ANSI/BHMA) et les fonctions de poignées de bâtiment.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
