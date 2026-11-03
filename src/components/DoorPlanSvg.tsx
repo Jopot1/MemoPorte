@@ -59,6 +59,8 @@ export const DoorPlanSvg: React.FC<DoorPlanSvgProps> = ({ code, openAngle }) => 
 
   // Handle position relative to door leaf
   const handleOffsetFromPivot = isLeftHinge ? 145 : -145;
+  // Levier de poignée : sort perpendiculairement de la porte, puis tourne à 90° vers les pentures (vers le pivot)
+  const leverDx = isLeftHinge ? -28 : 28;
 
   return (
     <div className="w-full flex flex-col items-center select-none">
@@ -181,18 +183,21 @@ export const DoorPlanSvg: React.FC<DoorPlanSvgProps> = ({ code, openAngle }) => 
               />
             )}
 
-            {/* POIGNÉES / LEVIERS SUR LE BATTANT */}
+            {/* POIGNÉES / LEVIERS SUR LE BATTANT (Sort de la porte et tourne à 90° vers les pentures) */}
             <g transform={`translate(${handleOffsetFromPivot}, 0)`}>
-              {/* Rosace centrale traversante */}
-              <circle cx="0" cy="0" r="6" fill="#1e293b" stroke="#cbd5e1" strokeWidth="1.5" />
+              {/* Plaque / Rosace traversante */}
+              <rect x="-4" y="-8" width="8" height="16" rx="2" fill="#0f172a" stroke="#cbd5e1" strokeWidth="1" />
+              <circle cx="0" cy="0" r="3" fill="#94a3b8" />
 
-              {/* LEVIER CÔTÉ INTÉRIEUR (vers Y négatif) */}
-              <line x1="0" y1="-6" x2="0" y2="-22" stroke="#334155" strokeWidth="4" strokeLinecap="round" />
-              <line x1="0" y1="-22" x2={isLeftHinge ? "-16" : "16"} y2="-22" stroke="#334155" strokeWidth="4" strokeLinecap="round" />
-              
-              {/* LEVIER CÔTÉ EXTÉRIEUR (vers Y positif) */}
-              <line x1="0" y1="6" x2="0" y2="22" stroke="#64748b" strokeWidth="4" strokeLinecap="round" />
-              <line x1="0" y1="22" x2={isLeftHinge ? "-16" : "16"} y2="22" stroke="#64748b" strokeWidth="4" strokeLinecap="round" />
+              {/* LEVIER CÔTÉ INTÉRIEUR (Sort de la porte vers le haut Y = -18, puis coude à 90° vers les pentures) */}
+              <line x1="0" y1="-6" x2="0" y2="-18" stroke="#1e293b" strokeWidth="4.5" strokeLinecap="round" />
+              <line x1="0" y1="-18" x2={leverDx} y2="-18" stroke="#1e293b" strokeWidth="4.5" strokeLinecap="round" />
+              <circle cx={leverDx} cy="-18" r="2.5" fill="#1e293b" />
+
+              {/* LEVIER CÔTÉ EXTÉRIEUR (Sort de la porte vers le bas Y = 18, puis coude à 90° vers les pentures) */}
+              <line x1="0" y1="6" x2="0" y2="18" stroke="#334155" strokeWidth="4.5" strokeLinecap="round" />
+              <line x1="0" y1="18" x2={leverDx} y2="18" stroke="#334155" strokeWidth="4.5" strokeLinecap="round" />
+              <circle cx={leverDx} cy="18" r="2.5" fill="#334155" />
             </g>
           </g>
 
