@@ -188,11 +188,11 @@ export const DoorPlanSvg: React.FC<DoorPlanSvgProps> = ({ code, openAngle }) => 
 
               {/* LEVIER CÔTÉ INTÉRIEUR (vers Y négatif) */}
               <line x1="0" y1="-6" x2="0" y2="-22" stroke="#334155" strokeWidth="4" strokeLinecap="round" />
-              <line x1="0" y1="-22" x2={isLeftHinge ? "14" : "-14"} y2="-22" stroke="#334155" strokeWidth="4" strokeLinecap="round" />
+              <line x1="0" y1="-22" x2={isLeftHinge ? "-16" : "16"} y2="-22" stroke="#334155" strokeWidth="4" strokeLinecap="round" />
               
               {/* LEVIER CÔTÉ EXTÉRIEUR (vers Y positif) */}
               <line x1="0" y1="6" x2="0" y2="22" stroke="#64748b" strokeWidth="4" strokeLinecap="round" />
-              <line x1="0" y1="22" x2={isLeftHinge ? "14" : "-14"} y2="22" stroke="#64748b" strokeWidth="4" strokeLinecap="round" />
+              <line x1="0" y1="22" x2={isLeftHinge ? "-16" : "16"} y2="22" stroke="#64748b" strokeWidth="4" strokeLinecap="round" />
             </g>
           </g>
 
