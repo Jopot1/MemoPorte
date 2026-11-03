@@ -62,7 +62,7 @@ export const DoorPlanSvg: React.FC<DoorPlanSvgProps> = ({ code, openAngle }) => 
 
   return (
     <div className="w-full flex flex-col items-center select-none">
-      <div className="relative w-full aspect-[540/440] max-w-[560px] bg-slate-50/90 rounded-2xl border border-slate-200/90 shadow-inner overflow-hidden p-2">
+      <div className="relative w-full aspect-[540/440] max-w-[560px] bg-slate-50/90 rounded-2xl border border-slate-200/90 shadow-xs overflow-hidden p-2">
         <svg
           viewBox="0 0 540 440"
           className="w-full h-full drop-shadow-xs font-sans"

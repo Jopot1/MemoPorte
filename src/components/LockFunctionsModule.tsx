@@ -5,7 +5,7 @@ import { LockMechanismSvg } from './LockMechanismSvg';
 import { Lock, Unlock, ShieldCheck, Key, Check, Info } from 'lucide-react';
 
 export const LockFunctionsModule: React.FC = () => {
-  const [selectedKey, setSelectedKey] = useState<LockFunctionKey>('depot');
+  const [selectedKey, setSelectedKey] = useState<LockFunctionKey>('passage');
   const [isSimulatedLocked, setIsSimulatedLocked] = useState<boolean>(true);
 
   const currentInfo = LOCK_FUNCTIONS_DATA[selectedKey];
@@ -40,7 +40,7 @@ export const LockFunctionsModule: React.FC = () => {
               <span>Types &amp; fonctions de poignées</span>
             </h2>
             <p className="text-xs text-slate-600">
-              Spécifications architecturales &amp; séries commerciales de référence
+              Spécifications &amp; séries commerciales de référence
             </p>
           </div>
         </div>

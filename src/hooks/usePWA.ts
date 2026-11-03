@@ -39,6 +39,12 @@ export function usePWA() {
       theme_color: '#0f172a',
       icons: [
         {
+          src: '/logo.png',
+          sizes: '192x192 512x512',
+          type: 'image/png',
+          purpose: 'any',
+        },
+        {
           src: svgDataUri,
           sizes: '512x512',
           type: 'image/svg+xml',

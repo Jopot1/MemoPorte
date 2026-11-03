@@ -85,13 +85,11 @@ export const DoorHandingModule: React.FC = () => {
               </h2>
             </div>
             <p className="text-xs md:text-sm text-blue-700 font-semibold mt-1">
-              Position de référence : Placez-vous à l'EXTÉRIEUR (couloir / entrée), face à la porte fermée.
+              Placez-vous à l'EXTÉRIEUR (couloir / entrée), face à la porte fermée.
             </p>
           </div>
 
           <div className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-mono text-slate-700">
-            <span>Norme ANSI/BHMA</span>
-            <span className="text-slate-400">·</span>
             <span className="text-amber-700 font-bold">Standard Nord-Américain</span>
           </div>
         </div>
@@ -101,7 +99,7 @@ export const DoorHandingModule: React.FC = () => {
           {/* Question 1 : Côté des pentures */}
           <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4">
             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2.5">
-              1. Côté des pentures (charnières) :
+              Côté des pentures (charnières) :
             </label>
             <div className="grid grid-cols-2 gap-2">
               <button
@@ -135,7 +133,7 @@ export const DoorHandingModule: React.FC = () => {
           {/* Question 2 : Comment s'ouvre la porte pour entrer ? */}
           <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4">
             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2.5">
-              2. Comment s'ouvre la porte pour entrer ?
+              Comment s'ouvre la porte pour entrer ?
             </label>
             <div className="grid grid-cols-2 gap-2">
               <button
@@ -147,7 +145,7 @@ export const DoorHandingModule: React.FC = () => {
                     : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-200'
                 }`}
               >
-                <span>Je POUSSE (intérieur)</span>
+                <span>Je POUSSE</span>
                 {swingAction === 'push' && <CheckCircle2 className="w-4 h-4 shrink-0 text-white" />}
               </button>
 
@@ -160,7 +158,7 @@ export const DoorHandingModule: React.FC = () => {
                     : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-200'
                 }`}
               >
-                <span>Je TIRE (vers moi)</span>
+                <span>Je TIRE</span>
                 {swingAction === 'pull' && <CheckCircle2 className="w-4 h-4 shrink-0 text-white" />}
               </button>
             </div>
@@ -168,17 +166,17 @@ export const DoorHandingModule: React.FC = () => {
         </div>
 
         {/* Résultat immédiat mis en évidence */}
-        <div className="mt-4 p-4 rounded-2xl bg-gradient-to-r from-blue-50 via-sky-50 to-indigo-50 border border-blue-200/90 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
-          <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-blue-600 text-white font-mono font-extrabold text-xl shadow-xs">
+        <div className="mt-4 p-4 rounded-2xl bg-blue-50/70 border border-blue-200/90 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+          <div className="flex items-center gap-3 min-w-0">
+            <div className="shrink-0 aspect-square w-12 h-12 min-w-12 min-h-12 flex items-center justify-center rounded-xl bg-blue-600 text-white font-mono font-extrabold text-xl shadow-xs">
               {currentInfo.code}
             </div>
-            <div>
-              <div className="flex items-center gap-2">
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-2">
                 <span className="text-base md:text-lg font-bold text-slate-900">
-                  {currentInfo.nameFr}
+                  {currentInfo.nameFr.replace(/^Porte\s+/i, '')}
                 </span>
-                <span className="text-xs px-2 py-0.5 rounded-full bg-white text-slate-600 font-mono border border-slate-200">
+                <span className="text-xs px-2 py-0.5 rounded-full bg-white text-slate-600 font-mono border border-slate-200 shrink-0">
                   {currentInfo.nameEn}
                 </span>
               </div>
@@ -205,7 +203,7 @@ export const DoorHandingModule: React.FC = () => {
       {/* ============================================================== */}
       <section className="space-y-2">
         <label className="text-xs font-bold text-slate-600 uppercase tracking-wider block">
-          Sélection directe parmi les 4 normes ANSI/BHMA :
+          Sélection directe parmi les 4 normes :
         </label>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
           {(['LH', 'RH', 'LHR', 'RHR'] as DoorHandCode[]).map((code) => {

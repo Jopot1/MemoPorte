@@ -4,7 +4,7 @@ export const DOOR_HANDING_DATA: Record<DoorHandCode, DoorHandingInfo> = {
   LH: {
     code: 'LH',
     nameFr: 'Porte Gauche',
-    nameEn: 'Left Hand (LH)',
+    nameEn: 'Left Hand',
     shortLabel: 'Gauche standard',
     hingeSide: 'left',
     swingAction: 'push',
@@ -20,7 +20,7 @@ export const DOOR_HANDING_DATA: Record<DoorHandCode, DoorHandingInfo> = {
   RH: {
     code: 'RH',
     nameFr: 'Porte Droite',
-    nameEn: 'Right Hand (RH)',
+    nameEn: 'Right Hand',
     shortLabel: 'Droite standard',
     hingeSide: 'right',
     swingAction: 'push',
@@ -36,7 +36,7 @@ export const DOOR_HANDING_DATA: Record<DoorHandCode, DoorHandingInfo> = {
   LHR: {
     code: 'LHR',
     nameFr: 'Porte Gauche Inversée',
-    nameEn: 'Left Hand Reverse (LHR)',
+    nameEn: 'Left Hand Reverse',
     shortLabel: 'Gauche inversée (Reverse)',
     hingeSide: 'left',
     swingAction: 'pull',
@@ -52,7 +52,7 @@ export const DOOR_HANDING_DATA: Record<DoorHandCode, DoorHandingInfo> = {
   RHR: {
     code: 'RHR',
     nameFr: 'Porte Droite Inversée',
-    nameEn: 'Right Hand Reverse (RHR)',
+    nameEn: 'Right Hand Reverse',
     shortLabel: 'Droite inversée (Reverse)',
     hingeSide: 'right',
     swingAction: 'pull',
