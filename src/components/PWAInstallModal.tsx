@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Smartphone, Download, Share2, PlusSquare, CheckCircle2, X } from 'lucide-react';
+import { AppLogo } from './AppLogo';
+import { Download, Share2, PlusSquare, CheckCircle2, X } from 'lucide-react';
 
 interface PWAInstallModalProps {
   isOpen: boolean;
@@ -38,13 +39,11 @@ export const PWAInstallModal: React.FC<PWAInstallModalProps> = ({
         </button>
 
         {/* Header */}
-        <div className="flex items-center gap-3 mb-5">
-          <div className="p-3 rounded-2xl bg-blue-50 border border-blue-100 text-blue-600">
-            <Smartphone className="w-6 h-6" />
-          </div>
+        <div className="flex items-center gap-3.5 mb-5">
+          <AppLogo size={46} zoom={1.3} className="shadow-xs" />
           <div>
             <h2 id="pwa-install-title" className="text-lg font-bold text-slate-900">
-              Installer sur votre mobile
+              Installer MémoPorte
             </h2>
             <p className="text-xs text-slate-500">
               Usage instantané sur chantier &amp; atelier, 100% hors-ligne

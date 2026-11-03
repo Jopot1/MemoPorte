@@ -22,7 +22,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           onClick={() => onNavigate('accueil')}
           className="flex items-center gap-3 text-left group transition-transform active:scale-[0.98]"
         >
-          <AppLogo size={36} />
+          <AppLogo size={42} zoom={1.35} />
           <div>
             <span className="text-base sm:text-lg font-extrabold text-slate-900 tracking-tight flex items-center gap-1.5 leading-none">
               Quincaillerie &amp; Portes

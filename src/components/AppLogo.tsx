@@ -3,31 +3,37 @@ import React, { useState } from 'react';
 interface AppLogoProps {
   className?: string;
   size?: number;
+  zoom?: number; // Facteur de zoom (ex: 1.3 = 30% plus grand dans le cadre)
 }
 
-export const AppLogo: React.FC<AppLogoProps> = ({ className = '', size = 36 }) => {
+export const AppLogo: React.FC<AppLogoProps> = ({
+  className = '',
+  size = 36,
+  zoom = 1.25,
+}) => {
   const [imgError, setImgError] = useState(false);
 
   return (
-    <div className={`relative flex items-center justify-center shrink-0 ${className}`}>
+    <div
+      className={`relative flex items-center justify-center shrink-0 overflow-hidden rounded-xl ${className}`}
+      style={{ width: size, height: size }}
+    >
       {!imgError ? (
         <img
           src="/logo.png"
           alt="Logo Quincaillerie & Portes"
           width={size}
           height={size}
-          className="rounded-lg object-contain"
+          className="w-full h-full object-contain select-none pointer-events-none transition-transform"
           onError={() => setImgError(true)}
-          style={{ width: size, height: size }}
+          style={{
+            transform: zoom ? `scale(${zoom})` : undefined,
+            transformOrigin: 'center center',
+          }}
         />
-      ) : null}
-
-      {/* Fallback architectural hardware emblem rendered if logo.png is not yet present */}
-      {imgError && (
-        <div
-          className="flex items-center justify-center rounded-xl bg-gradient-to-br from-cyan-600 to-slate-900 border border-cyan-400/30 text-white shadow-md shadow-cyan-950/50"
-          style={{ width: size, height: size }}
-        >
+      ) : (
+        /* Fallback architectural hardware emblem rendered if logo.png is missing or fails */
+        <div className="flex items-center justify-center w-full h-full bg-gradient-to-br from-blue-600 to-slate-900 border border-blue-400/30 text-white shadow-xs">
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -35,7 +41,7 @@ export const AppLogo: React.FC<AppLogoProps> = ({ className = '', size = 36 }) =
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="w-3/5 h-3/5 text-cyan-200"
+            className="w-3/5 h-3/5 text-blue-200"
           >
             {/* Door Frame & Door */}
             <rect x="3" y="3" width="13" height="18" rx="1.5" />
