@@ -16,6 +16,8 @@ export const DOOR_HANDING_DATA: Record<DoorHandCode, DoorHandingInfo> = {
     summary: 'Pentures à gauche, serrure à droite. Depuis l\'extérieur, vous poussez la porte vers l\'intérieur de la pièce.',
     buildingCodeNote: 'Sens régulier pour les portes intérieures de pièces, chambres, bureaux individuels ou locaux où le sens d\'évacuation n\'exige pas une ouverture vers le couloir.',
     mnemonicTip: 'Placez-vous face à la porte côté extérieur : les pentures sont à votre GAUCHE et vous POUSSEZ vers l\'avant.',
+    norbecEquivalent: 'Porte Droite',
+    norbecNote: 'Chez Norbec, les portes Gauche (LH) et Droite Inversée (RHR) correspondent à une Porte Droite.',
   },
   RH: {
     code: 'RH',
@@ -32,6 +34,8 @@ export const DOOR_HANDING_DATA: Record<DoorHandCode, DoorHandingInfo> = {
     summary: 'Pentures à droite, serrure à gauche. Depuis l\'extérieur, vous poussez la porte vers l\'intérieur de la pièce.',
     buildingCodeNote: 'Sens standard très fréquent dans l\'habitation et les bureaux pour dégager les murs de refend à droite.',
     mnemonicTip: 'Placez-vous face à la porte côté extérieur : les pentures sont à votre DROITE et vous POUSSEZ vers l\'avant.',
+    norbecEquivalent: 'Porte Gauche',
+    norbecNote: 'Chez Norbec, les portes Droite (RH) et Gauche Inversée (LHR) correspondent à une Porte Gauche.',
   },
   LHR: {
     code: 'LHR',
@@ -48,6 +52,8 @@ export const DOOR_HANDING_DATA: Record<DoorHandCode, DoorHandingInfo> = {
     summary: 'Pentures à gauche, serrure à droite. Depuis l\'extérieur, vous tirez le battant vers vous (la porte s\'ouvre vers le couloir / l\'extérieur).',
     buildingCodeNote: 'Norme obligatoire (CNB / CCQ / NFPA 101) pour les issues de secours, cages d\'escalier et locaux techniques à risque. Les personnes à l\'intérieur poussent la porte vers la sortie sans effort.',
     mnemonicTip: 'Face à la porte côté extérieur : les pentures sont à GAUCHE et vous TIREZ le battant vers vous.',
+    norbecEquivalent: 'Porte Gauche',
+    norbecNote: 'Chez Norbec, les portes Gauche Inversée (LHR) et Droite (RH) correspondent à une Porte Gauche.',
   },
   RHR: {
     code: 'RHR',
@@ -64,5 +70,7 @@ export const DOOR_HANDING_DATA: Record<DoorHandCode, DoorHandingInfo> = {
     summary: 'Pentures à droite, serrure à gauche. Depuis l\'extérieur, vous tirez le battant vers vous (la porte s\'ouvre vers le couloir / l\'extérieur).',
     buildingCodeNote: 'Couramment utilisée sur les portes de secours principales et les issues d\'urgence à sens d\'évacuation direct.',
     mnemonicTip: 'Face à la porte côté extérieur : les pentures sont à DROITE et vous TIREZ le battant vers vous.',
+    norbecEquivalent: 'Porte Droite',
+    norbecNote: 'Chez Norbec, les portes Droite Inversée (RHR) et Gauche (LH) correspondent à une Porte Droite.',
   },
 };

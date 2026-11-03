@@ -22,6 +22,8 @@ export interface DoorHandingInfo {
   buildingCodeNote: string;
   mnemonicTip: string;
   summary: string;
+  norbecEquivalent: string;
+  norbecNote: string;
 }
 
 export type LockFunctionKey = 'passage' | 'intimite' | 'bureau' | 'classe' | 'depot' | 'factice';

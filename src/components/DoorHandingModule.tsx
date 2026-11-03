@@ -196,6 +196,35 @@ export const DoorHandingModule: React.FC = () => {
             </span>
           </div>
         </div>
+
+        {/* Sous-bloc Équivalent Norbec */}
+        <div className="mt-3 p-3.5 sm:p-4 rounded-2xl bg-emerald-50/80 border border-emerald-200/90 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs">
+          <div className="flex items-center gap-3 min-w-0">
+            <div className="shrink-0 aspect-square w-11 h-11 min-w-11 min-h-11 flex items-center justify-center rounded-xl bg-emerald-600 text-white font-mono font-black text-xs shadow-xs">
+              NORBEC
+            </div>
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-xs font-black uppercase tracking-wider text-emerald-950">
+                  Équivalent Norbec :
+                </span>
+                <span className="text-sm sm:text-base font-extrabold text-emerald-900 bg-white px-2.5 py-0.5 rounded-lg border border-emerald-300 shadow-2xs">
+                  {currentInfo.norbecEquivalent}
+                </span>
+              </div>
+              <p className="text-xs text-emerald-800/90 mt-1 leading-snug">
+                {currentInfo.norbecNote}
+              </p>
+            </div>
+          </div>
+
+          <div className="shrink-0 self-start sm:self-center">
+            <span className="text-[11px] font-bold text-emerald-800 bg-emerald-100/90 px-3 py-1 rounded-xl border border-emerald-300/80 inline-flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+              Chambre froide &amp; Isotherme
+            </span>
+          </div>
+        </div>
       </section>
 
       {/* ============================================================== */}
@@ -237,6 +266,12 @@ export const DoorHandingModule: React.FC = () => {
                 </div>
                 <div className="text-[11px] text-slate-500 mt-1 leading-snug">
                   {item.hingeLabel} · {item.pushPullLabel.replace("Je ", "")}
+                </div>
+                <div className="mt-2 pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                  <span className="text-slate-400 font-medium">Norbec :</span>
+                  <span className="font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                    {item.norbecEquivalent.replace('Porte ', '')}
+                  </span>
                 </div>
               </button>
             );
@@ -344,6 +379,26 @@ export const DoorHandingModule: React.FC = () => {
               <div className="flex items-start justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-200/80">
                 <span className="text-slate-500 font-medium">Sens de déplacement :</span>
                 <span className="font-bold text-blue-700">{currentInfo.pushPullLabel}</span>
+              </div>
+
+              {/* Équivalent Fabricant Norbec */}
+              <div className="mt-3 p-3 rounded-2xl bg-emerald-50/80 border border-emerald-200/90 space-y-1.5">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[10px] font-mono font-black px-1.5 py-0.5 rounded bg-emerald-600 text-white">
+                      NORBEC
+                    </span>
+                    <span className="text-xs font-bold text-emerald-950">
+                      Équivalent Fabricant :
+                    </span>
+                  </div>
+                  <span className="text-xs font-black text-emerald-900 bg-white px-2.5 py-0.5 rounded-md border border-emerald-300 shadow-2xs">
+                    {currentInfo.norbecEquivalent}
+                  </span>
+                </div>
+                <p className="text-[11px] text-emerald-800 leading-snug">
+                  {currentInfo.norbecNote}
+                </p>
               </div>
             </div>
           </div>
