@@ -30,16 +30,6 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigate, onOpenInstallMod
           <p className="text-sm md:text-base text-slate-600 leading-relaxed">
             Vérifiez le sens d'une porte et le fonctionnement des poignées commerciales.
           </p>
-
-          <div className="pt-2">
-            <button
-              onClick={onOpenInstallModal}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md shadow-blue-500/20 transition-all active:scale-[0.98]"
-            >
-              <Smartphone className="w-4 h-4 text-white" />
-              <span>Installer l'app hors-ligne</span>
-            </button>
-          </div>
         </div>
       </div>
 
